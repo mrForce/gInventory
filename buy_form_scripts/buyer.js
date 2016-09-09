@@ -1,4 +1,4 @@
-var spreadsheet_id = 'something';
+var spreadsheetID = '1vBM89jcl7SLCvd_cdThZzYCl04SjaQXRu5OV1z3nGgc';
 
 function addBoughtItem(foodID, amountBought, sheet, sheetValues){
     /* Probably not the most efficient way of doing things, but I'm not worried */
@@ -20,11 +20,12 @@ function addBoughtItem(foodID, amountBought, sheet, sheetValues){
 
 function onFormSubmit(e){
     Logger.log("wrote out");
-    var ss = SpreadsheetApp.openById(spreadsheet_id);
+    var ss = SpreadsheetApp.openById(spreadsheetID);
     var inventorySheet = ss.getSheetByName('Foods');
 
     var formResponse = e.response;
     var responses = formResponse.getItemResponses();
+
     var item;
     var foodID;
     var amountBought;
