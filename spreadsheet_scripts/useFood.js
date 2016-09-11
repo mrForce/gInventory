@@ -1,16 +1,17 @@
-var formID = 'put in here';
+var useFormID = 'define this yourself';
 
 function useFoodOnSSChange(){
-    Logger.log("changing");
+    Logger.log("changingthe use form");
     //from the URL of the spreadsheet
     var spread = SpreadsheetApp.getActiveSpreadsheet();
     var inventorySheet = spread.getSheetByName('Foods');
     var loggingLocation = spread.getSheetByName('logging');
-    setupForm(spread, inventorySheet);
+    setupUseForm(spread, inventorySheet);
 }
 //map item ID to food ID
-function setupForm(ss, foodSheet) {
-    var form = FormApp.openById(formID);
+function setupUseForm(ss, foodSheet) {
+    Logger.log("setting up the use form");
+    var form = FormApp.openById(useFormID);
     var items = form.getItems();
     for(var i = 0; i < items.length; i++){
 	form.deleteItem(items[i]);
